@@ -21,6 +21,7 @@ public class ClientPredictedSpawnerFactory : NetworkBehaviour
 		if (!instance)
 			throw new Exception("Trying to create a Client predicted spawner, but the factory is null or not ready");
 
+		NetworkManager.AddNetworkPrefab(prefab.gameObject);
 		var spawner = new ClientPredictedSpawner(spawners.Count, prefab, instance.SpawnServerRPC);
 		spawners.Add(spawner);
 		return spawner;
