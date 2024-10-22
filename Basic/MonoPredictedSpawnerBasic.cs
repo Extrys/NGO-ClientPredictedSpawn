@@ -6,7 +6,7 @@ using UnityEngine;
 // Basic straightforward usage example 
 // The advanced method is using the same principle, but makes it more flexible
 // by integrating a highly customizable spawner factory
-public class MonoPredictedSpawnerEasy : NetworkBehaviour, INetworkPrefabInstanceHandler
+public class MonoPredictedSpawnerBasic : NetworkBehaviour, INetworkPrefabInstanceHandler
 {
 	[SerializeField] NetworkObject prefab;
 	Queue<NetworkObject> queuedIntances = new();
