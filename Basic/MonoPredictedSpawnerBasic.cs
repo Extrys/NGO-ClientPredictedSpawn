@@ -11,6 +11,11 @@ public class MonoPredictedSpawnerBasic : NetworkBehaviour, INetworkPrefabInstanc
 	[SerializeField] NetworkObject prefab;
 	Queue<NetworkObject> queuedIntances = new();
 
+	void Awake()
+	{
+		NetworkManager.Singleton.AddNetworkPrefab(prefab.gameObject);
+	}
+
 	private void Update()
 	{
 		if (UnityEngine.InputSystem.Mouse.current.backButton.wasPressedThisFrame)
