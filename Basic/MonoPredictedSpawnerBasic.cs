@@ -20,7 +20,7 @@ public class MonoPredictedSpawnerBasic : NetworkBehaviour, INetworkPrefabInstanc
 	public void Spawn(Vector3 position, Quaternion orientation)
 	{
 		var spawned = Instantiate(prefab, position, orientation);
-		spawned.SetSceneObjectStatus(false);
+		spawned.SetSceneObjectStatus(false); // this method is unavailable previous to unity 6, you might need to use reflections
 		queuedIntances.Enqueue(spawned);
 		SpawnServerRPC(NetworkManager.LocalClientId, position, orientation);
 	}
